@@ -164,3 +164,8 @@ lua中的闭包简而言之就是利用了lua中变量的持久性以及访问�
 # DelegateFactory
 
 lua 的委托在C#的创建由这个类负责，在创建前需要先在其的萃取列表中进行登记，由于涉及warp的原因，因此只能够使用warp进行登记。。。
+
+# coroutine
+
+lua 原生的协程不能够和Unity中的协程一样由系统进行管理自动在需要的时候进行启动。
+tolua 中实现与unity同步的协程的方式有两种，第一种是基于luamodule的update实现，在某个协程管理器的update函数中遍历协程；第二种是基于monobahvior实现，将lua函数转换为委托到monobahvior的协程函数执行完毕后进行调用，这种方式效率极低。
