@@ -45,6 +45,10 @@ SendMessage 最多支持传递一个参数，并且当存在无参的重载时�
 
 由于C#不支持多继承以及接口无法序列化的原因，在Unity中使用接口回调的形式无法序列化到inspector窗口上显示，只能通过sendmessage的形式调用指定接口，因此接口回调指支持单向通信。
 
-# 垃圾ngui动画警告
+# ngui动画
 
-当使用ngui的tweener动画时，由动画控制的变量将无法正常读取，这将会导致许多不可预知的bug，强烈建议不要使用
+当使用ngui的tweener动画时，由动画控制的变量将无法正常读取.
+
+# CalculateRelativeWidgetBounds 计算物体大小
+
+可以通过设置 considerChildren 为true用以计算包含子物体在内的大小边界
